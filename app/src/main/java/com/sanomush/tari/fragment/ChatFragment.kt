@@ -1,4 +1,4 @@
-package com.sanomush.tari
+package com.sanomush.tari.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +10,8 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.sanomush.tari.R
+import com.sanomush.tari.helper.JsonFallbackHelper
 
 class ChatFragment : Fragment() {
 
@@ -17,14 +19,15 @@ class ChatFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Mengarahkan class ini ke layout fragment_chat.xml yang baru dibuat
         return inflater.inflate(R.layout.fragment_chat, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Binding view secara manual (tanpa ViewBinding dulu biar cepat test UI)
+        // 1. INISIALISASI DATABASE JSON DI SINI
+        JsonFallbackHelper.initDatabase(requireContext())
+
         val btnSos = view.findViewById<Button>(R.id.btnSos)
         val btnFlashlight = view.findViewById<ImageButton>(R.id.btnFlashlight)
         val btnSend = view.findViewById<Button>(R.id.btnSend)
@@ -39,10 +42,19 @@ class ChatFragment : Fragment() {
             Toast.makeText(requireContext(), "F-08: Flashlight Toggled!", Toast.LENGTH_SHORT).show()
         }
 
+        // 2. UBAH LOGIKA TOMBOL KIRIM
         btnSend.setOnClickListener {
             val query = etInput.text.toString()
             if (query.isNotEmpty()) {
-                Toast.makeText(requireContext(), "Mengirim: $query", Toast.LENGTH_SHORT).show()
+                // Tampilkan pesan user sementara
+                Toast.makeText(requireContext(), "Kamu: $query", Toast.LENGTH_SHORT).show()
+
+                // Cari jawaban di JSON berdasarkan input user
+                val aiResponse = JsonFallbackHelper.searchInstruction(query)
+
+                // Tampilkan jawaban AI/JSON (pakai Toast panjang dulu untuk ngetes)
+                Toast.makeText(requireContext(), "TARY: $aiResponse", Toast.LENGTH_LONG).show()
+
                 etInput.text.clear()
             }
         }
