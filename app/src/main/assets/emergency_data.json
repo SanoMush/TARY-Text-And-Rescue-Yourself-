@@ -1,0 +1,14 @@
+[
+  {
+    "keywords": ["darah", "berdarah", "pendarahan", "luka"],
+    "instruction": "PANDUAN PENDARAHAN:\n1. Tekan area luka dengan kain bersih sekencang mungkin.\n2. Angkat bagian tubuh yang terluka lebih tinggi dari jantung jika memungkinkan.\n3. Jangan cabut benda yang menancap pada luka."
+  },
+  {
+    "keywords": ["patah", "tulang", "bengkak", "keseleo"],
+    "instruction": "PANDUAN PATAH TULANG:\n1. Jangan coba meluruskan tulang yang patah.\n2. Buat bidai (penyangga) menggunakan kayu/kardus dan ikat dengan kain di atas dan bawah area patah.\n3. Kurangi pergerakan seminimal mungkin."
+  },
+  {
+    "keywords": ["gempa", "runtuh", "terjebak", "tumpukan"],
+    "instruction": "PANDUAN TERJEBAK RUNTUHAN:\n1. Jangan menyalakan api (korek/mancis) karena rawan gas bocor.\n2. Tutup mulut dengan baju untuk menghindari debu.\n3. Ketuk pipa atau dinding berulang kali dengan batu/logam agar Tim SAR bisa mendengar. Jangan berteriak terus-menerus agar energi tidak habis."
+  }
+]
