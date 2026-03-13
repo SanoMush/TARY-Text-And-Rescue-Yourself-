@@ -79,7 +79,18 @@ class ChatFragment : Fragment() {
         }
 
         btnFlashlight.setOnClickListener {
-            Toast.makeText(requireContext(), "F-08: Flashlight Toggled!", Toast.LENGTH_SHORT).show()
+            // Panggil fungsi dari HardwareUtils
+            val isOn = com.sanomush.tari.helper.HardwareUtils.toggleFlashlight(requireContext())
+
+            if (isOn) {
+                // Opsional: Kasih efek warna kuning ke icon kalau senter nyala
+                btnFlashlight.setColorFilter(android.graphics.Color.parseColor("#FFEB3B"))
+                Toast.makeText(requireContext(), "Senter Menyala", Toast.LENGTH_SHORT).show()
+            } else {
+                // Hapus warna kuning kalau senter mati
+                btnFlashlight.clearColorFilter()
+                Toast.makeText(requireContext(), "Senter Mati", Toast.LENGTH_SHORT).show()
+            }
         }
 
         // 2. UBAH LOGIKA TOMBOL KIRIM
