@@ -14,14 +14,9 @@ Indonesia merupakan salah satu negara paling rawan bencana di dunia. Ketika benc
 
 TARY hadir sebagai Emergency Assistant berbasis AI yang tetap dapat berfungsi secara offline, sehingga pengguna dapat:
 
-memperoleh panduan pertolongan pertama
-
-mengirim pesan darurat
-
-mendapatkan instruksi keselamatan
-
-tetap terhubung dengan orang lain
-
-bahkan ketika internet tidak tersedia.
+1. memperoleh panduan pertolongan pertama.
+2. mengirim pesan darurat.
+3. mendapatkan instruksi keselamatan.
+4. tetap terhubung dengan orang lain bahkan ketika internet tidak tersedia.
 
 
