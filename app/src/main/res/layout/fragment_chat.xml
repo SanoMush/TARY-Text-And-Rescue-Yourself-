@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:background="#000000">
 
-    <!-- HEADER -->
     <LinearLayout
         android:id="@+id/headerLayout"
         android:layout_width="match_parent"
@@ -35,7 +34,6 @@
             android:contentDescription="Toggle Senter"
             app:tint="#FFFFFF" />
 
-        <!-- Tombol Kompas -->
         <ImageButton
             android:id="@+id/btnCompass"
             android:layout_width="48dp"
@@ -57,21 +55,15 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- PANEL KOMPAS (default GONE, muncul saat tombol ditekan) -->
     <LinearLayout
         android:id="@+id/compassPanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="#111111"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp"
+        android:padding="16dp"
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/headerLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/headerLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -79,14 +71,12 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
 
-            <!-- Jarum Kompas Custom View -->
             <com.sanomush.tari.helper.CompassView
                 android:id="@+id/compassView"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="8dp" />
 
-            <!-- Info Teks -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -96,21 +86,21 @@
 
                 <TextView
                     android:id="@+id/tvDegrees"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:text="0°"
                     android:textColor="#FFEB3B"
                     android:textSize="40sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
                 <TextView
                     android:id="@+id/tvDirection"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:text="Utara (N)"
                     android:textColor="#FFFFFF"
                     android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
                 <View
                     android:layout_width="match_parent"
@@ -120,56 +110,49 @@
                     android:layout_marginBottom="10dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:text="📍 Koordinat GPS"
                     android:textColor="#888888"
-                    android:textSize="11sp" />
+                    android:textSize="11sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
                 <TextView
                     android:id="@+id/tvLatitude"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:text="Lat: --"
                     android:textColor="#FFFFFF"
                     android:textSize="12sp"
-                    android:layout_marginTop="3dp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
                 <TextView
                     android:id="@+id/tvLongitude"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:text="Long: --"
                     android:textColor="#FFFFFF"
                     android:textSize="12sp"
-                    android:layout_marginTop="2dp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
                 <TextView
                     android:id="@+id/tvAccuracy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:text="Akurasi: --"
                     android:textColor="#888888"
                     android:textSize="11sp"
-                    android:layout_marginTop="2dp" />
-
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Status sensor di bawah -->
         <TextView
             android:id="@+id/tvCompassStatus"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:text="⏳ Menginisialisasi sensor..."
             android:textColor="#888888"
             android:textSize="11sp"
             android:gravity="center"
-            android:layout_marginTop="8dp" />
-
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"/>
     </LinearLayout>
 
-    <!-- RECYCLER VIEW — constraint top ke compassPanel -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvChat"
         android:layout_width="0dp"
@@ -177,43 +160,54 @@
         android:padding="8dp"
         android:clipToPadding="false"
         app:layout_constraintTop_toBottomOf="@id/compassPanel"
-        app:layout_constraintBottom_toTopOf="@id/inputLayout"
+        app:layout_constraintBottom_toTopOf="@id/dividerInput"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:listitem="@android:layout/simple_list_item_1" />
+        tools:listitem="@android:layout/simple_list_item_1"/>
 
-    <!-- INPUT BAR -->
+    <View
+        android:id="@+id/dividerInput"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#2A2A2A"
+        app:layout_constraintBottom_toTopOf="@id/inputLayout"/>
+
+
     <LinearLayout
         android:id="@+id/inputLayout"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="8dp"
+        android:padding="10dp"
         android:background="#1A1A1A"
+        android:elevation="12dp"
         android:gravity="center_vertical"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <EditText
             android:id="@+id/etInput"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
+            android:background="@drawable/bg_chat_input"
             android:hint="Ketik situasi (misal: pendarahan)..."
             android:textColorHint="#888888"
             android:textColor="#FFFFFF"
             android:padding="12dp"
             android:inputType="textCapSentences|textMultiLine"
-            android:maxLines="3" />
+            android:maxLines="3"/>
 
         <Button
             android:id="@+id/btnSend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Kirim"
+            android:layout_marginStart="8dp"
             android:backgroundTint="#FFEB3B"
             android:textColor="#000000"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
