@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.TARI" parent="Base.Theme.TARI">
+
+        <item name="android:windowSplashScreenBackground">#000000</item>
+
+        <item name="android:windowSplashScreenAnimatedIcon">@android:color/transparent</item>
+
+    </style>
+</resources>
