@@ -256,10 +256,6 @@ class ChatFragment : Fragment() {
         tvAccuracy.text = "Akurasi: ±${acc}m"
     }
 
-    // ─────────────────────────────────────────
-    // SOS
-    // ─────────────────────────────────────────
-
     private fun showTriageDialog() {
         val conditions = arrayOf("Aman", "Luka Ringan", "Kritis")
         AlertDialog.Builder(requireContext())
@@ -293,10 +289,6 @@ class ChatFragment : Fragment() {
             startActivity(smsIntent)
         }
     }
-
-    // ─────────────────────────────────────────
-    // LIFECYCLE
-    // ─────────────────────────────────────────
 
     override fun onPause() {
         super.onPause()
