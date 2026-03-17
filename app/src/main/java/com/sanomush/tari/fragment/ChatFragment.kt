@@ -25,6 +25,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.sanomush.tari.R
@@ -35,17 +36,22 @@ import com.sanomush.tari.helper.CompassView
 import com.sanomush.tari.helper.HardwareUtils
 import com.sanomush.tari.helper.JsonFallbackHelper
 import com.sanomush.tari.helper.LocationUtils
+import com.sanomush.tari.helper.LlmHelper
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class ChatFragment : Fragment() {
 
     private lateinit var chatAdapter: ChatAdapter
     private val chatList = mutableListOf<ChatMessage>()
 
-    // Kompas
+    // Mesin AI TARY
+    private lateinit var taryAi: LlmHelper
+
+    // Kompas & GPS
     private lateinit var compassHelper: CompassHelper
     private var isCompassVisible = false
-
-    // GPS
     private lateinit var locationManager: LocationManager
     private var locationListener: LocationListener? = null
 
@@ -60,7 +66,7 @@ class ChatFragment : Fragment() {
     private lateinit var tvAccuracy: TextView
     private lateinit var tvCompassStatus: TextView
 
-    // Permission launcher untuk SOS (lokasi)
+    // Permission launcher
     private val requestPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
     ) { permissions ->
@@ -68,7 +74,7 @@ class ChatFragment : Fragment() {
             showTriageDialog()
             startLocationUpdates()
         } else {
-            Toast.makeText(requireContext(), "Izin lokasi ditolak, gagal membuat koordinat presisi.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Izin lokasi ditolak.", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -84,13 +90,34 @@ class ChatFragment : Fragment() {
 
         JsonFallbackHelper.initDatabase(requireContext())
 
-        // Bind views
+        // ── 1. INISIALISASI & PANASKAN MESIN AI TARY ──
+        taryAi = LlmHelper(requireContext())
+
         val btnSos = view.findViewById<Button>(R.id.btnSos)
         val btnFlashlight = view.findViewById<ImageButton>(R.id.btnFlashlight)
         val btnSend = view.findViewById<Button>(R.id.btnSend)
         val etInput = view.findViewById<EditText>(R.id.etInput)
         val rvChat = view.findViewById<RecyclerView>(R.id.rvChat)
 
+        // Matikan tombol kirim & kotak teks sementara saat AI dipanaskan
+        btnSend.isEnabled = false
+        etInput.isEnabled = false // Bikin gak bisa diketik dulu
+        etInput.hint = "Mengekstrak mesin TARY (Bisa 2-3 Menit)..."
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            // Proses ini akan jalan di background dan nahan jalan UI sampai bener-bener beres
+            taryAi.loadModel()
+
+            // Kalau udah beres (baik sukses/gagal), balik ke Main UI
+            withContext(kotlinx.coroutines.Dispatchers.Main) {
+                btnSend.isEnabled = true
+                etInput.isEnabled = true
+                etInput.hint = "Ketik keluhan darurat di sini..."
+                Toast.makeText(requireContext(), "TARY Siap Digunakan!", Toast.LENGTH_LONG).show()
+            }
+        }
+
+        // Bind views compass
         btnCompass = view.findViewById(R.id.btnCompass)
         compassPanel = view.findViewById(R.id.compassPanel)
         compassView = view.findViewById(R.id.compassView)
@@ -103,16 +130,15 @@ class ChatFragment : Fragment() {
 
         // Setup RecyclerView
         chatAdapter = ChatAdapter(chatList)
-        rvChat.layoutManager = LinearLayoutManager(requireContext())
+        rvChat.layoutManager = LinearLayoutManager(requireContext()).apply {
+            stackFromEnd = false // Biar auto-scrollnya mulus
+        }
         rvChat.adapter = chatAdapter
 
-        // Setup kompas helper
         compassHelper = CompassHelper(requireContext())
         if (!compassHelper.isAvailable()) {
             tvCompassStatus.text = "⚠️ Sensor kompas tidak tersedia di perangkat ini"
         }
-
-        // Setup location manager
         locationManager = requireContext().getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
         // ── TOMBOL FLASHLIGHT ──
@@ -127,12 +153,8 @@ class ChatFragment : Fragment() {
             }
         }
 
-        // ── TOMBOL KOMPAS ──
-        btnCompass.setOnClickListener {
-            toggleCompass()
-        }
-
-        // ── TOMBOL SOS ──
+        // ── TOMBOL KOMPAS & SOS ──
+        btnCompass.setOnClickListener { toggleCompass() }
         btnSos.setOnClickListener {
             if (ContextCompat.checkSelfPermission(
                     requireContext(), Manifest.permission.ACCESS_FINE_LOCATION
@@ -141,29 +163,54 @@ class ChatFragment : Fragment() {
                 showTriageDialog()
             } else {
                 requestPermissionLauncher.launch(
-                    arrayOf(
-                        Manifest.permission.ACCESS_FINE_LOCATION,
-                        Manifest.permission.ACCESS_COARSE_LOCATION
-                    )
+                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
                 )
             }
         }
 
-        // ── TOMBOL KIRIM ──
+        // ── 2. TOMBOL KIRIM (EFEK NGETIK STREAMING) ──
         btnSend.setOnClickListener {
             val query = etInput.text.toString()
             if (query.isNotEmpty()) {
-                chatAdapter.addMessage(ChatMessage(query, isUser = true))
+                // Tampilkan chat user
+                chatList.add(ChatMessage(query, isUser = true))
+                chatAdapter.notifyItemInserted(chatList.size - 1)
                 rvChat.scrollToPosition(chatList.size - 1)
                 etInput.text.clear()
 
-                val taryResponse = JsonFallbackHelper.searchInstruction(query)
-                chatAdapter.addMessage(ChatMessage(taryResponse, isUser = false))
-                rvChat.scrollToPosition(chatList.size - 1)
+                // Matikan tombol biar gak di-spam
+                btnSend.isEnabled = false
+
+                // Siapkan bubble chat kosong untuk balasan TARY
+                val aiMessageIndex = chatList.size
+                chatList.add(ChatMessage("", isUser = false))
+                chatAdapter.notifyItemInserted(aiMessageIndex)
+                rvChat.scrollToPosition(aiMessageIndex)
+
+                val aiResponseBuilder = StringBuilder()
+
+                // Tangkap data Flow dari mesin GGUF
+                viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Default) {
+                    taryAi.generateResponse(query).collect { token ->
+                        aiResponseBuilder.append(token)
+
+                        // Balik ke Main Thread buat update UI kata per kata
+                        withContext(Dispatchers.Main) {
+                            // Update isi pesan AI yang tadi masih kosong
+                            chatList[aiMessageIndex] = ChatMessage(aiResponseBuilder.toString(), isUser = false)
+                            chatAdapter.notifyItemChanged(aiMessageIndex)
+                            rvChat.scrollToPosition(aiMessageIndex)
+                        }
+                    }
+
+                    // Kalau udah beres ngetik, nyalain lagi tombolnya
+                    withContext(Dispatchers.Main) {
+                        btnSend.isEnabled = true
+                    }
+                }
             }
         }
 
-        // Mulai update GPS jika izin sudah ada
         if (ContextCompat.checkSelfPermission(
                 requireContext(), Manifest.permission.ACCESS_FINE_LOCATION
             ) == PackageManager.PERMISSION_GRANTED
@@ -173,22 +220,17 @@ class ChatFragment : Fragment() {
     }
 
     // ─────────────────────────────────────────
-    // KOMPAS
+    // KOMPAS & GPS LOGIC (TIDAK ADA YANG DIUBAH)
     // ─────────────────────────────────────────
 
     private fun toggleCompass() {
         isCompassVisible = !isCompassVisible
-
         if (isCompassVisible) {
             compassPanel.visibility = View.VISIBLE
-
-            // Warna ikon jadi kuning saat aktif
             btnCompass.setColorFilter(
                 android.graphics.Color.parseColor("#FFEB3B"),
                 android.graphics.PorterDuff.Mode.SRC_IN
             )
-
-            // Mulai sensor
             compassHelper.start(object : CompassHelper.CompassListener {
                 override fun onAzimuthChanged(azimuth: Float, direction: String, degrees: Int) {
                     activity?.runOnUiThread {
@@ -202,18 +244,12 @@ class ChatFragment : Fragment() {
         } else {
             compassPanel.visibility = View.GONE
             compassHelper.stop()
-
-            // Kembalikan warna ikon ke putih
             btnCompass.setColorFilter(
                 android.graphics.Color.WHITE,
                 android.graphics.PorterDuff.Mode.SRC_IN
             )
         }
     }
-
-    // ─────────────────────────────────────────
-    // GPS (OFFLINE — pakai sensor GPS bawaan HP)
-    // ─────────────────────────────────────────
 
     @SuppressLint("MissingPermission")
     private fun startLocationUpdates() {
@@ -226,24 +262,11 @@ class ChatFragment : Fragment() {
         }
         locationListener = listener
 
-        // Coba GPS dulu (lebih akurat, offline)
-        try {
-            locationManager.requestLocationUpdates(
-                LocationManager.GPS_PROVIDER, 5000L, 5f, listener
-            )
-        } catch (_: Exception) {}
+        try { locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000L, 5f, listener) } catch (_: Exception) {}
+        try { locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000L, 5f, listener) } catch (_: Exception) {}
 
-        // Fallback ke Network provider
-        try {
-            locationManager.requestLocationUpdates(
-                LocationManager.NETWORK_PROVIDER, 5000L, 5f, listener
-            )
-        } catch (_: Exception) {}
-
-        // Tampilkan last known location langsung (tidak perlu tunggu GPS fix)
-        val lastKnown =
-            locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
-                ?: locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)
+        val lastKnown = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
+            ?: locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)
         lastKnown?.let { updateLocationUI(it) }
     }
 
@@ -269,15 +292,12 @@ class ChatFragment : Fragment() {
 
     private fun generateSosMessage(status: String) {
         Toast.makeText(requireContext(), "Mengambil lokasi...", Toast.LENGTH_SHORT).show()
-
         LocationUtils.getLastKnownLocation(requireContext()) { location ->
             val lat = location?.latitude?.toString() ?: "Unknown"
             val lon = location?.longitude?.toString() ?: "Unknown"
-
             val sosMessage = "SOS|TARY|Loc:$lat,$lon|Cond:$status"
 
-            val clipboard =
-                requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clipboard = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             val clip = ClipData.newPlainText("TARY SOS", sosMessage)
             clipboard.setPrimaryClip(clip)
             Toast.makeText(requireContext(), "Pesan disalin ke Clipboard!", Toast.LENGTH_SHORT).show()
@@ -314,5 +334,8 @@ class ChatFragment : Fragment() {
         super.onDestroyView()
         compassHelper.stop()
         locationListener?.let { locationManager.removeUpdates(it) }
+
+        // ── 3. MATIKAN MESIN AI BIAR RAM GAK BOCOR ──
+        taryAi.unloadModel()
     }
 }

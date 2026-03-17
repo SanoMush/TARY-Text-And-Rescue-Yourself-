@@ -6,9 +6,13 @@ android {
     namespace = "com.sanomush.tari"
     compileSdk = 36
 
+    androidResources {
+        noCompress.add("gguf")
+    }
+
     defaultConfig {
         applicationId = "com.sanomush.tari"
-        minSdk = 24
+        minSdk = 33
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -18,9 +22,16 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
+    packaging {
+        jniLibs {
+            useLegacyPackaging = true
+        }
+    }
 }
 
 dependencies {
+    implementation(files("libs/lib-release.aar"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

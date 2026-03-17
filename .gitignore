@@ -13,3 +13,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Ignore Large Model Files
+app/src/main/assets/*.gguf
