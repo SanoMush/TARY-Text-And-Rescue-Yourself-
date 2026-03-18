@@ -66,7 +66,6 @@ class ChatFragment : Fragment() {
     private lateinit var tvAccuracy: TextView
     private lateinit var tvCompassStatus: TextView
 
-    // Permission launcher
     private val requestPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
     ) { permissions ->
@@ -90,7 +89,6 @@ class ChatFragment : Fragment() {
 
         JsonFallbackHelper.initDatabase(requireContext())
 
-        // ── 1. INISIALISASI & PANASKAN MESIN AI TARY ──
         taryAi = LlmHelper(requireContext())
 
         val btnSos = view.findViewById<Button>(R.id.btnSos)
@@ -99,16 +97,13 @@ class ChatFragment : Fragment() {
         val etInput = view.findViewById<EditText>(R.id.etInput)
         val rvChat = view.findViewById<RecyclerView>(R.id.rvChat)
 
-        // Matikan tombol kirim & kotak teks sementara saat AI dipanaskan
         btnSend.isEnabled = false
-        etInput.isEnabled = false // Bikin gak bisa diketik dulu
+        etInput.isEnabled = false
         etInput.hint = "Mengekstrak mesin TARY (Bisa 2-3 Menit)..."
 
         viewLifecycleOwner.lifecycleScope.launch {
-            // Proses ini akan jalan di background dan nahan jalan UI sampai bener-bener beres
             taryAi.loadModel()
 
-            // Kalau udah beres (baik sukses/gagal), balik ke Main UI
             withContext(kotlinx.coroutines.Dispatchers.Main) {
                 btnSend.isEnabled = true
                 etInput.isEnabled = true
@@ -128,10 +123,9 @@ class ChatFragment : Fragment() {
         tvAccuracy = view.findViewById(R.id.tvAccuracy)
         tvCompassStatus = view.findViewById(R.id.tvCompassStatus)
 
-        // Setup RecyclerView
         chatAdapter = ChatAdapter(chatList)
         rvChat.layoutManager = LinearLayoutManager(requireContext()).apply {
-            stackFromEnd = false // Biar auto-scrollnya mulus
+            stackFromEnd = false
         }
         rvChat.adapter = chatAdapter
 
@@ -141,7 +135,6 @@ class ChatFragment : Fragment() {
         }
         locationManager = requireContext().getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
-        // ── TOMBOL FLASHLIGHT ──
         btnFlashlight.setOnClickListener {
             val isOn = HardwareUtils.toggleFlashlight(requireContext())
             if (isOn) {
@@ -168,20 +161,16 @@ class ChatFragment : Fragment() {
             }
         }
 
-        // ── 2. TOMBOL KIRIM (EFEK NGETIK STREAMING) ──
         btnSend.setOnClickListener {
             val query = etInput.text.toString()
             if (query.isNotEmpty()) {
-                // Tampilkan chat user
                 chatList.add(ChatMessage(query, isUser = true))
                 chatAdapter.notifyItemInserted(chatList.size - 1)
                 rvChat.scrollToPosition(chatList.size - 1)
                 etInput.text.clear()
 
-                // Matikan tombol biar gak di-spam
                 btnSend.isEnabled = false
 
-                // Siapkan bubble chat kosong untuk balasan TARY
                 val aiMessageIndex = chatList.size
                 chatList.add(ChatMessage("", isUser = false))
                 chatAdapter.notifyItemInserted(aiMessageIndex)
@@ -189,21 +178,17 @@ class ChatFragment : Fragment() {
 
                 val aiResponseBuilder = StringBuilder()
 
-                // Tangkap data Flow dari mesin GGUF
                 viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Default) {
                     taryAi.generateResponse(query).collect { token ->
                         aiResponseBuilder.append(token)
 
-                        // Balik ke Main Thread buat update UI kata per kata
                         withContext(Dispatchers.Main) {
-                            // Update isi pesan AI yang tadi masih kosong
                             chatList[aiMessageIndex] = ChatMessage(aiResponseBuilder.toString(), isUser = false)
                             chatAdapter.notifyItemChanged(aiMessageIndex)
                             rvChat.scrollToPosition(aiMessageIndex)
                         }
                     }
 
-                    // Kalau udah beres ngetik, nyalain lagi tombolnya
                     withContext(Dispatchers.Main) {
                         btnSend.isEnabled = true
                     }
@@ -218,10 +203,6 @@ class ChatFragment : Fragment() {
             startLocationUpdates()
         }
     }
-
-    // ─────────────────────────────────────────
-    // KOMPAS & GPS LOGIC (TIDAK ADA YANG DIUBAH)
-    // ─────────────────────────────────────────
 
     private fun toggleCompass() {
         isCompassVisible = !isCompassVisible

@@ -12,20 +12,16 @@ import kotlinx.coroutines.withContext
 
 class LlmHelper(private val context: Context) {
 
-    // Mesin AI dari library ARM
     private var engine: InferenceEngine? = null
 
-    // 1. Load Model pakai Coroutine biar UI gak nge-freeze
     suspend fun loadModel() {
-        withContext(Dispatchers.IO) { // Pakai IO karena kita mau baca/tulis file besar
+        withContext(Dispatchers.IO) {
             try {
                 Log.d("TARY", "Memanaskan mesin GGUF...")
                 engine = AiChat.getInferenceEngine(context)
 
-                // Lokasi "Kamar Pribadi" aplikasi TARY
                 val internalFile = java.io.File(context.filesDir, "gemma-3-1b-it-q4_0.gguf")
 
-                // Kalau file belum ada di kamar pribadi TARY, kita copy dari folder Assets!
                 if (!internalFile.exists()) {
                     Log.d("TARY", "Mengekstrak file AI ke sistem TARY... (Tunggu 1-2 menit ya!)")
 
@@ -39,7 +35,7 @@ class LlmHelper(private val context: Context) {
                     Log.d("TARY", "File AI sudah ada, langsung dipanaskan!")
                 }
 
-                // Load mesinnya pakai jalur kamar pribadi!
+
                 engine?.loadModel(internalFile.path)
                 Log.d("TARY", "TARY: Model berhasil di-load dan SIAP DIGUNAKAN!")
 
@@ -50,11 +46,9 @@ class LlmHelper(private val context: Context) {
         }
     }
 
-    // 2. Generate response pakai Flow biar munculnya ngetik kata per kata
     fun generateResponse(userMessage: String): Flow<String> {
         val inference = engine ?: return flow { emit("Sistem TARY belum siap. Tunggu loading selesai.") }
 
-        // RAHASIA TARY: Prompt bersih tanpa tag yang bikin bingung, plus Persona TARYUS!
         val finalPrompt = """
             Kamu adalah TARY, asisten darurat P3K. Jawab keluhan dengan sangat singkat, pakai bahasa sehari-hari. 
             Wajib selalu awali jawaban kamu dengan kalimat: "Halo TARYUS, jangan panik! Lakukan langkah-langkah ini:"
@@ -65,7 +59,7 @@ class LlmHelper(private val context: Context) {
             1. Duduk tegak dan condongkan badan ke depan.
             2. Pencet cuping hidung selama 10 menit.
             3. Jangan berbaring atau mendongak ke atas.
-            
+           
             Contoh 2:
             Keluhan: Kesiram air panas di dapur.
             Jawaban: Halo TARYUS, jangan panik! Lakukan langkah-langkah ini:
@@ -79,7 +73,6 @@ class LlmHelper(private val context: Context) {
         """.trimIndent()
 
         return try {
-            // Minta engine membalas dan alirkan datanya (Flow)
             inference.sendUserPrompt(finalPrompt)
                 .catch { e ->
                     Log.e("TARY", "Error saat generasi", e)
@@ -91,7 +84,6 @@ class LlmHelper(private val context: Context) {
         }
     }
 
-    // 3. Wajib panggil ini pas aplikasi ditutup biar RAM HP balik lega
     fun unloadModel() {
         try {
             engine?.destroy()

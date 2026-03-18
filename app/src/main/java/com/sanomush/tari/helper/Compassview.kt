@@ -16,7 +16,6 @@ class CompassView @JvmOverloads constructor(
 
     private var azimuth: Float = 0f
 
-    // Paint untuk lingkaran luar
     private val circlePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL
         color = Color.parseColor("#1A1A1A")
@@ -28,19 +27,16 @@ class CompassView @JvmOverloads constructor(
         color = Color.parseColor("#FFEB38")
     }
 
-    // Paint jarum merah (Utara)
     private val needleNorthPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL
         color = Color.parseColor("#D32F2F")
     }
 
-    // Paint jarum putih (Selatan)
     private val needleSouthPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL
         color = Color.parseColor("#FFFFFF")
     }
 
-    // Paint teks arah mata angin
     private val textPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = Color.parseColor("#FFEB38")
         textAlign = Paint.Align.CENTER
@@ -59,7 +55,6 @@ class CompassView @JvmOverloads constructor(
         color = Color.parseColor("#FFEB38")
     }
 
-    // Paint tick marks
     private val tickPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.STROKE
         color = Color.parseColor("#555555")
@@ -87,11 +82,8 @@ class CompassView @JvmOverloads constructor(
         textPaint.textSize = radius * 0.18f
         textSecondaryPaint.textSize = radius * 0.13f
 
-        // Gambar lingkaran latar
         canvas.drawCircle(cx, cy, radius, circlePaint)
         canvas.drawCircle(cx, cy, radius, circleBorderPaint)
-
-        // Gambar tick marks (setiap 10 derajat)
         canvas.save()
         canvas.rotate(-azimuth, cx, cy)
         for (i in 0 until 36) {
@@ -108,7 +100,6 @@ class CompassView @JvmOverloads constructor(
             canvas.drawLine(startX, startY, endX, endY, paint)
         }
 
-        // Gambar label arah mata angin
         val labelRadius = radius * 0.65f
         val directions = arrayOf("U", "T", "S", "B")
         val angles = arrayOf(0.0, 90.0, 180.0, 270.0)
@@ -121,11 +112,7 @@ class CompassView @JvmOverloads constructor(
         }
 
         canvas.restore()
-
-        // Gambar jarum kompas (tidak ikut rotate — selalu menunjuk Utara)
         drawNeedle(canvas, cx, cy, radius)
-
-        // Titik tengah
         canvas.drawCircle(cx, cy, radius * 0.06f, centerPaint)
         canvas.drawCircle(cx, cy, radius * 0.03f, circlePaint)
     }
@@ -133,8 +120,6 @@ class CompassView @JvmOverloads constructor(
     private fun drawNeedle(canvas: Canvas, cx: Float, cy: Float, radius: Float) {
         val needleLength = radius * 0.55f
         val needleWidth = radius * 0.07f
-
-        // Jarum Utara (Merah) — selalu ke atas layar
         val northPath = Path().apply {
             moveTo(cx, cy - needleLength)
             lineTo(cx - needleWidth, cy)
@@ -143,8 +128,6 @@ class CompassView @JvmOverloads constructor(
             close()
         }
         canvas.drawPath(northPath, needleNorthPaint)
-
-        // Jarum Selatan (Putih) — selalu ke bawah
         val southPath = Path().apply {
             moveTo(cx, cy + needleLength)
             lineTo(cx - needleWidth, cy)

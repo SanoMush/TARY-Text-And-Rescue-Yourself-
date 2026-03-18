@@ -24,8 +24,6 @@ class CompassHelper(private val context: Context) : SensorEventListener {
 
     private var listener: CompassListener? = null
     private var currentAzimuth: Float = 0f
-
-    // Low-pass filter alpha
     private val alpha = 0.1f
 
     fun start(listener: CompassListener) {
@@ -42,7 +40,6 @@ class CompassHelper(private val context: Context) : SensorEventListener {
     override fun onSensorChanged(event: SensorEvent) {
         when (event.sensor.type) {
             Sensor.TYPE_ACCELEROMETER -> {
-                // Low-pass filter untuk smoothing
                 gravity[0] = alpha * event.values[0] + (1 - alpha) * gravity[0]
                 gravity[1] = alpha * event.values[1] + (1 - alpha) * gravity[1]
                 gravity[2] = alpha * event.values[2] + (1 - alpha) * gravity[2]
@@ -59,8 +56,6 @@ class CompassHelper(private val context: Context) : SensorEventListener {
             SensorManager.getOrientation(rotationMatrix, orientation)
             var azimuth = Math.toDegrees(orientation[0].toDouble()).toFloat()
             azimuth = (azimuth + 360) % 360
-
-            // Smoothing perubahan azimuth
             currentAzimuth = smoothAngle(currentAzimuth, azimuth)
 
             val direction = getCardinalDirection(currentAzimuth)
@@ -73,7 +68,6 @@ class CompassHelper(private val context: Context) : SensorEventListener {
 
     private fun smoothAngle(current: Float, target: Float): Float {
         var diff = target - current
-        // Tangani wrap-around 0/360
         if (diff > 180) diff -= 360
         if (diff < -180) diff += 360
         return (current + diff * 0.15f + 360) % 360
