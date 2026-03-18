@@ -1,14 +1,185 @@
 [
   {
-    "keywords": ["darah", "berdarah", "pendarahan", "luka"],
-    "instruction": "PANDUAN PENDARAHAN:\n1. Tekan area luka dengan kain bersih sekencang mungkin.\n2. Angkat bagian tubuh yang terluka lebih tinggi dari jantung jika memungkinkan.\n3. Jangan cabut benda yang menancap pada luka."
+    "kategori": "Medis",
+    "judul": "Perdarahan Mayor Eksternal dan Syok Hipovolemik",
+    "sumber": "PMI",
+    "tindakan": [
+      "Gunakan APD berupa sarung tangan lateks atau nitril medis. [cite: 43]",
+      "Aplikasikan tekanan langsung pada titik luka menggunakan bantalan kasa steril tebal atau kain bersih yang dilipat. [cite: 64, 65]",
+      "Pertahankan tekanan tanpa dilepas hingga perdarahan terkontrol, dan balut kuat dengan perban gulung. [cite: 67]",
+      "Jika darah merembes, tambahkan lapisan kasa sekunder di atasnya tanpa mengangkat kasa pertama. [cite: 71, 72]",
+      "Baringkan penderita dan angkat bagian ekstremitas bawah (tungkai kaki) jika ada tanda-tanda syok primer. [cite: 74]"
+    ],
+    "larangan": [
+      "Dilarang keras menggunakan sarung tangan yang hanya terbuat dari bahan kain karena darah dapat merembes dan menularkan patogen. [cite: 43, 44]",
+      "Dilarang mengangkat kasa pertama yang telah diaplikasikan karena akan merobek bekuan fibrin darah yang baru terbentuk. [cite: 69, 70]",
+      "Dilarang membuang kasa yang sudah merembes darah. [cite: 71]",
+      "Dilarang mengabaikan evaluasi status kesadaran korban secara berkala. [cite: 73, 248]"
+    ],
+    "perlengkapan": [
+      "Sarung tangan lateks/nitril medis [cite: 43]",
+      "Kasa steril tebal absorpsi [cite: 65, 248]",
+      "Perban gulung fiksasi silang [cite: 67, 248]",
+      "Mitela atau kain segitiga [cite: 51, 248]",
+      "Sabun antiseptik cair [cite: 46, 247]"
+    ]
   },
   {
-    "keywords": ["patah", "tulang", "bengkak", "keseleo"],
-    "instruction": "PANDUAN PATAH TULANG:\n1. Jangan coba meluruskan tulang yang patah.\n2. Buat bidai (penyangga) menggunakan kayu/kardus dan ikat dengan kain di atas dan bawah area patah.\n3. Kurangi pergerakan seminimal mungkin."
+    "kategori": "Medis",
+    "judul": "Trauma Termal (Luka Bakar Akut)",
+    "sumber": "PMI",
+    "tindakan": [
+      "Hentikan proses bakar seketika dengan menginstruksikan korban menjatuhkan diri dan berguling (stop, drop, and roll). [cite: 81, 84]",
+      "Dinginkan area yang terbakar menggunakan air keran mengalir bersuhu normal minimal selama 20 menit berturut-turut. [cite: 86]",
+      "Tutup luka menggunakan kasa steril basah atau plastik pembungkus makanan (cling film) secara sangat longgar. [cite: 87, 250]",
+      "Apabila sumber luka bakar adalah listrik, wajib putuskan aliran sirkuit utama terlebih dahulu sebelum kontak fisik. [cite: 85]"
+    ],
+    "larangan": [
+      "Dilarang keras mengoleskan pasta gigi (odol), mentega, kecap, atau substansi minyak apa pun ke atas permukaan luka bakar karena bertindak sebagai insulator panas dan memicu infeksi. [cite: 89, 94, 96]",
+      "Dilarang meletakkan es langsung bersentuhan dengan epitel kulit. [cite: 86, 105]",
+      "Dilarang memegang korban yang masih kontak dengan arus listrik tanpa menggunakan instalasi material isolator. [cite: 85, 251]"
+    ],
+    "perlengkapan": [
+      "Air keran suhu normal mengalir [cite: 86, 249]",
+      "Kasa steril basah [cite: 87, 250]",
+      "Plastik pembungkus makanan (cling film) [cite: 87, 250]",
+      "Tongkat isolator kayu kering (untuk listrik) [cite: 251]"
+    ]
   },
   {
-    "keywords": ["gempa", "runtuh", "terjebak", "tumpukan"],
-    "instruction": "PANDUAN TERJEBAK RUNTUHAN:\n1. Jangan menyalakan api (korek/mancis) karena rawan gas bocor.\n2. Tutup mulut dengan baju untuk menghindari debu.\n3. Ketuk pipa atau dinding berulang kali dengan batu/logam agar Tim SAR bisa mendengar. Jangan berteriak terus-menerus agar energi tidak habis."
+    "kategori": "Medis",
+    "judul": "Trauma Muskuloskeletal (Fraktur / Patah Tulang)",
+    "sumber": "PMI",
+    "tindakan": [
+      "Lakukan imobilisasi dan stabilisasi dengan memfiksasi area cedera menggunakan bidai (spalk kayu padat) atau papan spinal. [cite: 101, 103]",
+      "Kunci persendian di atas dan bawah patahan menggunakan mitela atau perban kain dengan ketegangan kuat. [cite: 104]",
+      "Pada fraktur tertutup, aplikasikan kompres es berbalut kain tipis untuk menurunkan perdarahan internal. [cite: 105]",
+      "Pada fraktur terbuka, langsung tutup bagian tulang yang mencuat menggunakan kasa steril atau kain terbersih secara lembut. [cite: 115]"
+    ],
+    "larangan": [
+      "Dilarang mencoba meluruskan bagian tubuh ekstremitas yang mengalami deformitas parah bengkok kembali ke posisi lurus anatomis aslinya karena berisiko memotong arteri saraf. [cite: 107, 110]",
+      "Dilarang keras mencoba menarik atau mendorong kembali potongan tulang yang menonjol keluar masuk ke dalam rongga tubuh karena akan memicu infeksi sumsum (osteomielitis). [cite: 111, 113, 114]"
+    ],
+    "perlengkapan": [
+      "Bidai / Spalk kayu padat [cite: 103, 252]",
+      "Papan spinal punggung [cite: 103, 256]",
+      "Mitela atau perban pengikat [cite: 104, 252]",
+      "Kasa steril penutup [cite: 115, 257]",
+      "Bantalan lunak / handuk / selimut [cite: 103, 254]"
+    ]
+  },
+  {
+    "kategori": "Medis",
+    "judul": "Kegawatdaruratan Tenggelam (Asfiksia Cairan)",
+    "sumber": "PMI",
+    "tindakan": [
+      "Teriak minta bantuan peringatan dan segera angkat tubuh korban keluar dari air menuju daratan yang datar dan keras. [cite: 123, 259]",
+      "Bebaskan jalan napas (Airway) dan segera inisiasi Resusitasi Jantung Paru (RJP/CPR) jika korban tidak responsif dan tidak bernapas. [cite: 124, 125]",
+      "Lakukan kompresi dada ritmis di tengah tulang dada dan bantuan napas tiupan penuh dengan rasio absolut 30:2. [cite: 128, 131, 132]",
+      "Baringkan tubuh korban miring ke salah satu sisi (recovery position) saat sirkulasi membaik untuk mencegah aspirasi muntahan. [cite: 134, 135]",
+      "Selimuti secara pasif untuk mencegah hipotermia evaporatif. [cite: 136, 146]"
+    ],
+    "larangan": [
+      "Dilarang melompat masuk ke dalam air jika penolong tidak memiliki kualifikasi keterampilan berenang tingkat ahli secara formal. [cite: 138]",
+      "Dilarang melakukan RJP tiupan tanpa barier jika tidak memiliki masker resusitasi pelindung infeksi. [cite: 133, 260, 261]",
+      "Saat korban siuman, dilarang langsung drastis menghangatkan tubuhnya dengan air panas. [cite: 141]",
+      "Dilarang keras melakukan pemijatan agresif pada otot ekstremitas kaki atau lengan saat korban menggigil karena memicu fenomena mematikan after-drop (henti jantung akibat darah dingin kembali ke miokardium). [cite: 142, 144, 145]"
+    ],
+    "perlengkapan": [
+      "Pelampung ring / ban / instrumen apung [cite: 138, 259]",
+      "Tali nilon panjang [cite: 166, 260]",
+      "Masker resusitasi barrier pelindung RJP [cite: 133, 260]",
+      "Selimut kain tebal dan kering [cite: 136, 146, 263]"
+    ]
+  },
+  {
+    "kategori": "Bencana",
+    "judul": "Gempa Bumi (Kedaruratan Tektonik)",
+    "sumber": "BNPB",
+    "tindakan": [
+      "Praktikkan manuver refleks pertahanan Drop, Cover, and Hold on (menjatuhkan diri ke lantai, merangkak berlindung di kolong struktur keras seperti meja kayu, dan berpegangan). [cite: 179, 181, 275]",
+      "Lindungi persendian kepala, leher belakang, dan mata menggunakan bantal empuk, tas punggung, buku tebal, atau lipatan lengan (helm improvisasi). [cite: 183, 277, 278]",
+      "Jika sedang menggunakan dapur, sesegera mungkin gapai kenop aliran gas dan matikan kompor untuk mencegah ledakan sekunder. [cite: 184, 279]"
+    ],
+    "larangan": [
+      "Dilarang berdiri di bawah area pembatas material rapuh seperti partisi jendela kaca, di dekat lemari pajangan, papan reklame neon, atau di bawah pepohonan/tiang listrik di luar ruangan. [cite: 188, 278, 279]",
+      "Dilarang memicu kepanikan emosional massal dengan berlarian berhamburan serentak (stampede) menuju jalan keluar sempit saat guncangan berlangsung. [cite: 190, 275, 276, 280]",
+      "Dilarang melakukan pergerakan keluar gedung komersial/bioskop sebelum guncangan seismik gempa dipastikan benar-benar berhenti mutlak. [cite: 191, 192]"
+    ],
+    "perlengkapan": [
+      "Meja furnitur kayu keras padat kokoh [cite: 181, 276]",
+      "Bantal / tas punggung (untuk proteksi kepala/helm improvisasi) [cite: 183, 277]",
+      "Peluit berdesibel tinggi (penanda K-9 jika tertimbun puing ruangan sempit) [cite: 167, 169, 278]",
+      "Tas Siaga Bencana (TSB) [cite: 154]"
+    ]
+  },
+  {
+    "kategori": "Bencana",
+    "judul": "Erupsi Gunung Api (Vulkanik)",
+    "sumber": "BNPB",
+    "tindakan": [
+      "Pantau secara ketat informasi preskriptif evakuasi dari Pusat Vulkanologi dan Mitigasi Bencana Geologi (PVMBG). [cite: 185]",
+      "Gunakan aplikasi MAGMA Indonesia di sistem operasi gawai untuk memantau aktivitas vulkanik. [cite: 185]",
+      "Gunakan masker penyaring N-95 atau yang relevan untuk menahan debu. [cite: 185]",
+      "Gunakan instrumen kacamata pelindung kedap udara (goggles) khusus pelindung mata. [cite: 185]"
+    ],
+    "larangan": [
+      "Dilarang membiarkan kornea mata dan epitel saluran pernapasan terpapar partikulat serpihan kaca silika tajam dari debu vulkanik kasar. [cite: 185]"
+    ],
+    "perlengkapan": [
+      "Aplikasi MAGMA Indonesia [cite: 185]",
+      "Masker penyaring N-95 [cite: 185]",
+      "Kacamata pelindung (goggles) kedap udara [cite: 185]"
+    ]
+  },
+  {
+    "kategori": "Bencana",
+    "judul": "Banjir Bandang & Genangan Air Ekstrem",
+    "sumber": "BNPB",
+    "tindakan": [
+      "Pelajari rute jalur lintasan evakuasi lingkungan berbasis kelurahan sejak pra-bencana. [cite: 198]",
+      "Segera amankan Tas Siaga Bencana (TSB) dan evakuasi ke topografi daerah elevasi yang jauh lebih tinggi. [cite: 154, 195, 281]",
+      "Pantau observasi informasi resmi cuaca hidrometeorologis dan peringatan dini dari BPBD/BNPB lokal. [cite: 198, 283, 285]",
+      "Pemutusan instalasi aliran arus listrik dari gardu meteran sekring utama kelistrikan (MCB) properti harus segera dilakukan secepat kilat untuk mencegah sengatan sirkuit tersetrum massal. [cite: 196, 197, 285, 324]"
+    ],
+    "larangan": [
+      "JANGAN PANIK! Sindrom histeria atau kepanikan dilarang keras karena dapat mematikan korteks prefrontal rasional di otak, sehingga pasien gagal melakukan langkah esensial logis pengamanan. [cite: 199, 201, 202, 282]",
+      "Dilarang lalai, menyepelekan, atau mengabaikan tindakan mematikan instalasi arus listrik di rumah yang tergenang air keruh konduktif. [cite: 197, 285, 286, 325]"
+    ],
+    "perlengkapan": [
+      "Tas Siaga Bencana (TSB) otonom [cite: 154, 281, 327]",
+      "Dokumen legal penting (sertifikat, KK, KTP) diisolasi berlapis plastik kedap air ganda [cite: 157, 159, 285]",
+      "Lampu senter penerangan dan suplai baterai cadangan [cite: 166, 283]",
+      "Jas hujan plastik mantel ponco tebal dan baju lengan tebal panjang pelindung hipotermia basah [cite: 163, 286, 329]",
+      "Bank daya listrik (power bank) [cite: 165, 286]",
+      "Uang kas / Rupiah tunai dalam pecahan kecil [cite: 165, 284]",
+      "Cadangan ransum kalori tinggi matang siap saji (tanpa dimasak) dan air minum botol segel kemasan [cite: 161, 282]"
+    ]
+  },
+  {
+    "kategori": "Bencana",
+    "judul": "Kebakaran Struktur Interior Gedung Tertutup",
+    "sumber": "BNPB",
+    "tindakan": [
+      "Pertahankan ketenangan sikap. Menjadi penemu (first observer) wajib menyalakan dan membunyikan alat fasilitas tombol aktivasi tanda bahaya (bel alarm sirene evakuasi). [cite: 208, 209, 288, 289]",
+      "Evakuasi segera bergerak melangkah cepat mengikuti rambu piktogram penerangan arah berwarna hijau (glow in the dark sign) ke tangga darurat. [cite: 211, 289]",
+      "Bila terhalang tabir kumpulan gas asap monoksida pekat, ubah pergerakan menjadi merayap/merangkak menempel rendah di dekat lantai karena sisa oksigen bersih selalu berada di elevasi radius setinggi lutut. [cite: 211, 213, 291, 292]",
+      "Sambil merayap, atur pernapasan ritmis dengan menghembus pendek-pendek untuk efisiensi dan meminimalkan volume partikulat racun asap kimia yang dihirup. [cite: 214, 215, 293]",
+      "Tiba di luar, segera berkumpul terfokus di Muster Point (Titik Kumpul Lapangan) untuk absen tabulasi kalkulasi (head count) karyawan hilang dan melapor ke otoritas. [cite: 216, 294]"
+    ],
+    "larangan": [
+      "Dilarang mempraktekkan mobilitas cepat tidak terkendali (berlari tergesa-gesa) di tangga lorong evakuasi sempit karena memicu tumpukan korban jatuh asfiksia beruntun. [cite: 222, 289]",
+      "Sangat dilarang keras berlindung ke dalam atau menaiki sistem Elevator/Lift karena lorong terowongan lift bertindak seperti sistem cerobong (chimney effect) yang menarik menyedot awan partikel panas langsung ke kabin atas. [cite: 225, 226, 290]",
+      "Dilarang keras berbalik arah rotasi melawan aliran kerumunan gelombang massa pelarian (counter-flow) karena akan menyebabkan himpitan tekanan dinding kerumunan fatal. [cite: 231, 232, 293]",
+      "Dilarang mengangkut beban material perbekalan dengan dimensi yang berukuran lebih lebar berat dari tas jinjing punggung biasa. [cite: 229, 230, 295, 296]",
+      "Bagi wanita, dilarang mutlak memakai sepatu hak tinggi sol lancip (high heels / stiletto) saat di tangga karena merusak gravitasi engsel pergelangan yang rentan tersandung mencederai komuter antrian belakang. [cite: 234, 235, 297]",
+      "Bagi wanita, dilarang pemakaian tekstil celana stoking tipis berbahan polimer nilon sintetis elastane komersial. Pada suhu kebakaran, bahan polimer tersebut akan meleleh cair meresap dan menempel menyatu melebur ke dalam dermis pori betis menyebabkan kerusakan luka bakar keliling permanen ekstrem. [cite: 236, 237, 238, 298, 317, 319]"
+    ],
+    "perlengkapan": [
+      "Tombol saklar aktivasi alarm peringatan sirene [cite: 209, 289]",
+      "Rambu arah lampu penunjuk evakuasi (glow in the dark) menyala [cite: 211, 289, 290]",
+      "Infrastruktur jalur lorong tangga pintu keluar darurat [cite: 211, 288, 289]",
+      "Sarana alat instrumen telekomunikasi genggam darurat (laporan ke Damkar) [cite: 216, 290, 292]"
+    ]
   }
 ]
