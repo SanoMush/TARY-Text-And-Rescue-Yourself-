@@ -26,12 +26,22 @@
             android:textStyle="bold" />
 
         <ImageButton
+            android:id="@+id/btnBukuSaku"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_book"
+            android:contentDescription="Buku Saku"
+            app:tint="#FFFFFF" />
+
+        <ImageButton
             android:id="@+id/btnFlashlight"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/flashlight"
             android:contentDescription="Toggle Senter"
+            android:layout_marginStart="4dp"
             app:tint="#FFFFFF" />
 
         <ImageButton
@@ -171,7 +181,6 @@
         android:layout_height="1dp"
         android:background="#2A2A2A"
         app:layout_constraintBottom_toTopOf="@id/inputLayout"/>
-
 
     <LinearLayout
         android:id="@+id/inputLayout"

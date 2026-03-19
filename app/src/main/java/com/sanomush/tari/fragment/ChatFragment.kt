@@ -28,13 +28,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.sanomush.tari.BookActivity
 import com.sanomush.tari.R
 import com.sanomush.tari.adapter.ChatAdapter
 import com.sanomush.tari.data.ChatMessage
 import com.sanomush.tari.helper.CompassHelper
 import com.sanomush.tari.helper.CompassView
 import com.sanomush.tari.helper.HardwareUtils
-import com.sanomush.tari.helper.JsonFallbackHelper
 import com.sanomush.tari.helper.LocationUtils
 import com.sanomush.tari.helper.LlmHelper
 import kotlinx.coroutines.Dispatchers
@@ -87,12 +87,13 @@ class ChatFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        JsonFallbackHelper.initDatabase(requireContext())
 
         taryAi = LlmHelper(requireContext())
-
         val btnSos = view.findViewById<Button>(R.id.btnSos)
         val btnFlashlight = view.findViewById<ImageButton>(R.id.btnFlashlight)
+        val btnBukuSaku = view.findViewById<ImageButton>(R.id.btnBukuSaku) // Tombol Buku Saku
+
+
         val btnSend = view.findViewById<Button>(R.id.btnSend)
         val etInput = view.findViewById<EditText>(R.id.etInput)
         val rvChat = view.findViewById<RecyclerView>(R.id.rvChat)
@@ -112,7 +113,6 @@ class ChatFragment : Fragment() {
             }
         }
 
-        // Bind views compass
         btnCompass = view.findViewById(R.id.btnCompass)
         compassPanel = view.findViewById(R.id.compassPanel)
         compassView = view.findViewById(R.id.compassView)
@@ -146,7 +146,13 @@ class ChatFragment : Fragment() {
             }
         }
 
-        // ── TOMBOL KOMPAS & SOS ──
+
+        btnBukuSaku.setOnClickListener {
+            val intent = Intent(requireContext(), BookActivity::class.java)
+            startActivity(intent)
+        }
+
+
         btnCompass.setOnClickListener { toggleCompass() }
         btnSos.setOnClickListener {
             if (ContextCompat.checkSelfPermission(
@@ -188,6 +194,11 @@ class ChatFragment : Fragment() {
                             rvChat.scrollToPosition(aiMessageIndex)
                         }
                     }
+
+                    // ── TAMBAHAN BARU: SIMPAN INGATAN SETELAH AI SELESAI NGETIK ──
+                    val finalAiResponse = aiResponseBuilder.toString().trim()
+                    taryAi.addChatHistory(query, finalAiResponse)
+                    // ─────────────────────────────────────────────────────────────
 
                     withContext(Dispatchers.Main) {
                         btnSend.isEnabled = true
@@ -316,7 +327,7 @@ class ChatFragment : Fragment() {
         compassHelper.stop()
         locationListener?.let { locationManager.removeUpdates(it) }
 
-        // ── 3. MATIKAN MESIN AI BIAR RAM GAK BOCOR ──
+        // ── MATIKAN MESIN AI BIAR RAM GAK BOCOR ──
         taryAi.unloadModel()
     }
 }
