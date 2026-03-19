@@ -24,6 +24,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
+// --- IMPORT BARU UNTUK BACA TINGGI KEYBOARD ---
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+// ----------------------------------------------
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -87,12 +91,10 @@ class ChatFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         taryAi = LlmHelper(requireContext())
         val btnSos = view.findViewById<Button>(R.id.btnSos)
         val btnFlashlight = view.findViewById<ImageButton>(R.id.btnFlashlight)
-        val btnBukuSaku = view.findViewById<ImageButton>(R.id.btnBukuSaku) // Tombol Buku Saku
-
+        val btnBukuSaku = view.findViewById<ImageButton>(R.id.btnBukuSaku)
 
         val btnSend = view.findViewById<Button>(R.id.btnSend)
         val etInput = view.findViewById<EditText>(R.id.etInput)
@@ -129,6 +131,29 @@ class ChatFragment : Fragment() {
         }
         rvChat.adapter = chatAdapter
 
+        // --- KODE FIX KEYBOARD NUTUP INPUT BOX ---
+        // Kode ini secara manual membaca tinggi keyboard dan ngedorong layout ke atas
+        ViewCompat.setOnApplyWindowInsetsListener(view) { v, insets ->
+            val imeVisible = insets.isVisible(WindowInsetsCompat.Type.ime())
+            val imeHeight = insets.getInsets(WindowInsetsCompat.Type.ime()).bottom
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+            // Padding bawah otomatis mengikuti tinggi keyboard saat muncul
+            val bottomPadding = if (imeVisible) imeHeight else systemBars.bottom
+
+            // Terapkan padding ke root view fragment
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, bottomPadding)
+
+            // Auto-scroll RecyclerView ke pesan terbawah saat keyboard naik
+            if (imeVisible && chatAdapter.itemCount > 0) {
+                rvChat.postDelayed({
+                    rvChat.smoothScrollToPosition(chatAdapter.itemCount - 1)
+                }, 100)
+            }
+            insets
+        }
+        // -----------------------------------------
+
         compassHelper = CompassHelper(requireContext())
         if (!compassHelper.isAvailable()) {
             tvCompassStatus.text = "⚠️ Sensor kompas tidak tersedia di perangkat ini"
@@ -146,12 +171,10 @@ class ChatFragment : Fragment() {
             }
         }
 
-
         btnBukuSaku.setOnClickListener {
             val intent = Intent(requireContext(), BookActivity::class.java)
             startActivity(intent)
         }
-
 
         btnCompass.setOnClickListener { toggleCompass() }
         btnSos.setOnClickListener {
@@ -195,10 +218,8 @@ class ChatFragment : Fragment() {
                         }
                     }
 
-                    // ── TAMBAHAN BARU: SIMPAN INGATAN SETELAH AI SELESAI NGETIK ──
                     val finalAiResponse = aiResponseBuilder.toString().trim()
                     taryAi.addChatHistory(query, finalAiResponse)
-                    // ─────────────────────────────────────────────────────────────
 
                     withContext(Dispatchers.Main) {
                         btnSend.isEnabled = true
@@ -327,7 +348,6 @@ class ChatFragment : Fragment() {
         compassHelper.stop()
         locationListener?.let { locationManager.removeUpdates(it) }
 
-        // ── MATIKAN MESIN AI BIAR RAM GAK BOCOR ──
         taryAi.unloadModel()
     }
 }
