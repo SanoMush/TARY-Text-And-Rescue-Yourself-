@@ -1,4 +1,4 @@
-🚨 TARY – Text And Rescue Yourself🚨
+🚨 TARY – Text And Rescue Yourself
 
 AI-Powered Offline Emergency Assistant for Disaster Situations
 
