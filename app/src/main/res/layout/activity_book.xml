@@ -35,6 +35,21 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <!-- KOLOM PENCARIAN (SEARCH BAR) -->
+    <EditText
+        android:id="@+id/etSearchBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_chat_input"
+        android:hint="Cari (misal: luka, patah, henti)..."
+        android:textColor="#FFFFFF"
+        android:textColorHint="#888888"
+        android:padding="12dp"
+        android:inputType="text"
+        android:maxLines="1"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvBook"
         android:layout_width="match_parent"

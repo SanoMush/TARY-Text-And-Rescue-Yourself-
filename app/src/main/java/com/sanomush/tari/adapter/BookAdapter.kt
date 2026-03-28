@@ -10,7 +10,8 @@ import com.sanomush.tari.DetailBookActivity
 import com.sanomush.tari.R
 import com.sanomush.tari.data.EmergencyData
 
-class BookAdapter(private val listData: List<EmergencyData>) :
+// PERHATIKAN: 'val' diubah menjadi 'var' agar datanya bisa di-update
+class BookAdapter(private var listData: List<EmergencyData>) :
     RecyclerView.Adapter<BookAdapter.BookViewHolder>() {
 
     class BookViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -35,7 +36,6 @@ class BookAdapter(private val listData: List<EmergencyData>) :
             holder.tvPreview.text = data.tindakan[0]
         }
 
-        // --- INI LOGIKA KLIK PINDAH HALAMAN (INTENT) ---
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
             val intent = Intent(context, DetailBookActivity::class.java).apply {
@@ -43,7 +43,6 @@ class BookAdapter(private val listData: List<EmergencyData>) :
                 putExtra("EXTRA_KATEGORI", data.kategori)
                 putExtra("EXTRA_SUMBER", data.sumber)
 
-                // Kirim data list JSON ke halaman detail
                 putStringArrayListExtra("EXTRA_TINDAKAN", ArrayList(data.tindakan))
                 putStringArrayListExtra("EXTRA_LARANGAN", ArrayList(data.larangan))
                 putStringArrayListExtra("EXTRA_PERLENGKAPAN", ArrayList(data.perlengkapan))
@@ -53,4 +52,10 @@ class BookAdapter(private val listData: List<EmergencyData>) :
     }
 
     override fun getItemCount(): Int = listData.size
+
+    // --- FUNGSI BARU UNTUK SEARCH BAR ---
+    fun updateData(newList: List<EmergencyData>) {
+        listData = newList
+        notifyDataSetChanged() // Meminta RecyclerView merender ulang layar
+    }
 }
