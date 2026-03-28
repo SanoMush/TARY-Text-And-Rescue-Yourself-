@@ -4,24 +4,27 @@
     "judul": "Perdarahan Mayor Eksternal dan Syok Hipovolemik",
     "sumber": "PMI",
     "tindakan": [
-      "Gunakan APD berupa sarung tangan lateks atau nitril medis. [cite: 43]",
-      "Aplikasikan tekanan langsung pada titik luka menggunakan bantalan kasa steril tebal atau kain bersih yang dilipat. [cite: 64, 65]",
-      "Pertahankan tekanan tanpa dilepas hingga perdarahan terkontrol, dan balut kuat dengan perban gulung. [cite: 67]",
-      "Jika darah merembes, tambahkan lapisan kasa sekunder di atasnya tanpa mengangkat kasa pertama. [cite: 71, 72]",
-      "Baringkan penderita dan angkat bagian ekstremitas bawah (tungkai kaki) jika ada tanda-tanda syok primer. [cite: 74]"
+      "Gunakan APD berupa sarung tangan lateks atau nitril medis.",
+      "Aplikasikan tekanan langsung pada titik luka menggunakan bantalan kasa steril tebal atau kain bersih yang dilipat.",
+      "Pertahankan tekanan tanpa dilepas hingga perdarahan terkontrol selama minimal 5-10 menit, dan balut kuat dengan perban gulung.[cite: 1]",
+      "Jika darah merembes, tambahkan lapisan kasa sekunder di atasnya tanpa mengangkat kasa pertama.",
+      "Baringkan penderita dan angkat bagian ekstremitas bawah (tungkai kaki) atau area yang terluka lebih tinggi dari posisi jantung jika tidak ada patah tulang.[cite: 1]",
+      "Jika pendarahan di tangan atau kaki tidak berhenti dan mengancam nyawa, pasang torniket (tourniquet) 5 cm di atas luka dan catat waktu pemasangannya.[cite: 1]"
     ],
     "larangan": [
-      "Dilarang keras menggunakan sarung tangan yang hanya terbuat dari bahan kain karena darah dapat merembes dan menularkan patogen. [cite: 43, 44]",
-      "Dilarang mengangkat kasa pertama yang telah diaplikasikan karena akan merobek bekuan fibrin darah yang baru terbentuk. [cite: 69, 70]",
-      "Dilarang membuang kasa yang sudah merembes darah. [cite: 71]",
-      "Dilarang mengabaikan evaluasi status kesadaran korban secara berkala. [cite: 73, 248]"
+      "Dilarang keras menggunakan sarung tangan yang hanya terbuat dari bahan kain karena darah dapat merembes dan menularkan patogen.",
+      "Dilarang mengangkat kasa pertama yang telah diaplikasikan karena akan merobek bekuan fibrin darah yang baru terbentuk.",
+      "Dilarang membuang kasa yang sudah merembes darah.",
+      "Dilarang mencabut benda yang menancap pada luka; stabilkan benda tersebut dengan balutan di sekelilingnya.[cite: 1]",
+      "Dilarang mengabaikan evaluasi status kesadaran korban secara berkala."
     ],
     "perlengkapan": [
-      "Sarung tangan lateks/nitril medis [cite: 43]",
-      "Kasa steril tebal absorpsi [cite: 65, 248]",
-      "Perban gulung fiksasi silang [cite: 67, 248]",
-      "Mitela atau kain segitiga [cite: 51, 248]",
-      "Sabun antiseptik cair [cite: 46, 247]"
+      "Sarung tangan lateks/nitril medis",
+      "Kasa steril tebal absorpsi",
+      "Perban gulung fiksasi silang",
+      "Torniket (Tourniquet) medis[cite: 1]",
+      "Mitela atau kain segitiga",
+      "Sabun antiseptik cair"
     ]
   },
   {
@@ -29,21 +32,24 @@
     "judul": "Trauma Termal (Luka Bakar Akut)",
     "sumber": "PMI",
     "tindakan": [
-      "Hentikan proses bakar seketika dengan menginstruksikan korban menjatuhkan diri dan berguling (stop, drop, and roll). [cite: 81, 84]",
-      "Dinginkan area yang terbakar menggunakan air keran mengalir bersuhu normal minimal selama 20 menit berturut-turut. [cite: 86]",
-      "Tutup luka menggunakan kasa steril basah atau plastik pembungkus makanan (cling film) secara sangat longgar. [cite: 87, 250]",
-      "Apabila sumber luka bakar adalah listrik, wajib putuskan aliran sirkuit utama terlebih dahulu sebelum kontak fisik. [cite: 85]"
+      "Hentikan proses bakar seketika dengan menginstruksikan korban menjatuhkan diri dan berguling (stop, drop, and roll).",
+      "Dinginkan area yang terbakar menggunakan air keran mengalir bersuhu normal minimal selama 15-20 menit berturut-turut.[cite: 1]",
+      "Lepaskan perhiasan, jam tangan, atau pakaian ketat di sekitar luka sebelum area tersebut membengkak.[cite: 1]",
+      "Tutup luka menggunakan kasa steril basah atau plastik pembungkus makanan (cling film) secara sangat longgar.",
+      "Apabila sumber luka bakar adalah listrik, wajib putuskan aliran sirkuit utama terlebih dahulu sebelum kontak fisik.",
+      "Cari bantuan medis untuk luka bakar derajat 2 yang luas, derajat 3, atau yang mengenai wajah, tangan, dan kelamin.[cite: 1]"
     ],
     "larangan": [
-      "Dilarang keras mengoleskan pasta gigi (odol), mentega, kecap, atau substansi minyak apa pun ke atas permukaan luka bakar karena bertindak sebagai insulator panas dan memicu infeksi. [cite: 89, 94, 96]",
-      "Dilarang meletakkan es langsung bersentuhan dengan epitel kulit. [cite: 86, 105]",
-      "Dilarang memegang korban yang masih kontak dengan arus listrik tanpa menggunakan instalasi material isolator. [cite: 85, 251]"
+      "Dilarang keras mengoleskan pasta gigi (odol), mentega, kecap, atau substansi minyak apa pun ke atas permukaan luka bakar karena bertindak sebagai insulator panas dan memicu infeksi.",
+      "Dilarang meletakkan es langsung bersentuhan dengan epitel kulit.",
+      "Dilarang memecahkan gelembung lepuhan pada luka bakar.[cite: 1]",
+      "Dilarang memegang korban yang masih kontak dengan arus listrik tanpa menggunakan instalasi material isolator."
     ],
     "perlengkapan": [
-      "Air keran suhu normal mengalir [cite: 86, 249]",
-      "Kasa steril basah [cite: 87, 250]",
-      "Plastik pembungkus makanan (cling film) [cite: 87, 250]",
-      "Tongkat isolator kayu kering (untuk listrik) [cite: 251]"
+      "Air keran suhu normal mengalir",
+      "Kasa steril basah",
+      "Plastik pembungkus makanan (cling film)",
+      "Tongkat isolator kayu kering (untuk listrik)"
     ]
   },
   {
@@ -51,21 +57,22 @@
     "judul": "Trauma Muskuloskeletal (Fraktur / Patah Tulang)",
     "sumber": "PMI",
     "tindakan": [
-      "Lakukan imobilisasi dan stabilisasi dengan memfiksasi area cedera menggunakan bidai (spalk kayu padat) atau papan spinal. [cite: 101, 103]",
-      "Kunci persendian di atas dan bawah patahan menggunakan mitela atau perban kain dengan ketegangan kuat. [cite: 104]",
-      "Pada fraktur tertutup, aplikasikan kompres es berbalut kain tipis untuk menurunkan perdarahan internal. [cite: 105]",
-      "Pada fraktur terbuka, langsung tutup bagian tulang yang mencuat menggunakan kasa steril atau kain terbersih secara lembut. [cite: 115]"
+      "Lakukan imobilisasi dan stabilisasi dengan memfiksasi area cedera menggunakan bidai (spalk kayu padat) atau papan spinal.",
+      "Jika ada luka berdarah, hentikan pendarahan dengan tekanan lembut di sekitar tulang, bukan tepat di atas tulang yang menonjol.[cite: 1]",
+      "Kunci persendian di atas dan bawah patahan menggunakan mitela atau perban kain dengan ketegangan yang tidak terlalu ketat.[cite: 1]",
+      "Pada fraktur tertutup, aplikasikan kompres es berbalut kain tipis untuk menurunkan perdarahan internal dan bengkak.[cite: 1]",
+      "Pada fraktur terbuka, langsung tutup bagian tulang yang mencuat menggunakan kasa steril atau kain terbersih secara lembut tanpa menekan tulang masuk kembali.[cite: 1]"
     ],
     "larangan": [
-      "Dilarang mencoba meluruskan bagian tubuh ekstremitas yang mengalami deformitas parah bengkok kembali ke posisi lurus anatomis aslinya karena berisiko memotong arteri saraf. [cite: 107, 110]",
-      "Dilarang keras mencoba menarik atau mendorong kembali potongan tulang yang menonjol keluar masuk ke dalam rongga tubuh karena akan memicu infeksi sumsum (osteomielitis). [cite: 111, 113, 114]"
+      "Dilarang mencoba meluruskan atau mengembalikan bagian tubuh ekstremitas yang mengalami deformitas parah ke posisi aslinya.[cite: 1]",
+      "Dilarang keras mencoba menarik atau mendorong kembali potongan tulang yang menonjol keluar masuk ke dalam rongga tubuh karena memicu infeksi sumsum."
     ],
     "perlengkapan": [
-      "Bidai / Spalk kayu padat [cite: 103, 252]",
-      "Papan spinal punggung [cite: 103, 256]",
-      "Mitela atau perban pengikat [cite: 104, 252]",
-      "Kasa steril penutup [cite: 115, 257]",
-      "Bantalan lunak / handuk / selimut [cite: 103, 254]"
+      "Bidai / Spalk kayu padat",
+      "Papan spinal punggung",
+      "Mitela atau perban pengikat",
+      "Kasa steril penutup",
+      "Bantalan lunak / handuk / selimut"
     ]
   },
   {
@@ -73,23 +80,116 @@
     "judul": "Kegawatdaruratan Tenggelam (Asfiksia Cairan)",
     "sumber": "PMI",
     "tindakan": [
-      "Teriak minta bantuan peringatan dan segera angkat tubuh korban keluar dari air menuju daratan yang datar dan keras. [cite: 123, 259]",
-      "Bebaskan jalan napas (Airway) dan segera inisiasi Resusitasi Jantung Paru (RJP/CPR) jika korban tidak responsif dan tidak bernapas. [cite: 124, 125]",
-      "Lakukan kompresi dada ritmis di tengah tulang dada dan bantuan napas tiupan penuh dengan rasio absolut 30:2. [cite: 128, 131, 132]",
-      "Baringkan tubuh korban miring ke salah satu sisi (recovery position) saat sirkulasi membaik untuk mencegah aspirasi muntahan. [cite: 134, 135]",
-      "Selimuti secara pasif untuk mencegah hipotermia evaporatif. [cite: 136, 146]"
+      "Teriak minta bantuan peringatan dan segera angkat tubuh korban keluar dari air menuju daratan yang datar dan keras.",
+      "Bebaskan jalan napas (Airway) dan segera inisiasi Resusitasi Jantung Paru (RJP/CPR) jika korban tidak responsif dan tidak bernapas.",
+      "Lakukan kompresi dada ritmis di tengah tulang dada dan bantuan napas tiupan penuh dengan rasio absolut 30:2.",
+      "Baringkan tubuh korban miring ke salah satu sisi (recovery position) saat sirkulasi membaik untuk mencegah aspirasi muntahan.",
+      "Selimuti secara pasif untuk mencegah hipotermia evaporatif."
     ],
     "larangan": [
-      "Dilarang melompat masuk ke dalam air jika penolong tidak memiliki kualifikasi keterampilan berenang tingkat ahli secara formal. [cite: 138]",
-      "Dilarang melakukan RJP tiupan tanpa barier jika tidak memiliki masker resusitasi pelindung infeksi. [cite: 133, 260, 261]",
-      "Saat korban siuman, dilarang langsung drastis menghangatkan tubuhnya dengan air panas. [cite: 141]",
-      "Dilarang keras melakukan pemijatan agresif pada otot ekstremitas kaki atau lengan saat korban menggigil karena memicu fenomena mematikan after-drop (henti jantung akibat darah dingin kembali ke miokardium). [cite: 142, 144, 145]"
+      "Dilarang melompat masuk ke dalam air jika penolong tidak memiliki kualifikasi keterampilan berenang tingkat ahli secara formal.",
+      "Dilarang melakukan RJP tiupan tanpa barier jika tidak memiliki masker resusitasi pelindung infeksi.",
+      "Saat korban siuman, dilarang langsung drastis menghangatkan tubuhnya dengan air panas.",
+      "Dilarang keras melakukan pemijatan agresif pada otot ekstremitas kaki atau lengan saat korban menggigil karena memicu fenomena mematikan after-drop."
     ],
     "perlengkapan": [
-      "Pelampung ring / ban / instrumen apung [cite: 138, 259]",
-      "Tali nilon panjang [cite: 166, 260]",
-      "Masker resusitasi barrier pelindung RJP [cite: 133, 260]",
-      "Selimut kain tebal dan kering [cite: 136, 146, 263]"
+      "Pelampung ring / ban / instrumen apung",
+      "Tali nilon panjang",
+      "Masker resusitasi barrier pelindung RJP",
+      "Selimut kain tebal dan kering"
+    ]
+  },
+  {
+    "kategori": "Bantuan Hidup Dasar (BHD)",
+    "judul": "Henti Jantung & Henti Napas (CPR / RJP)",
+    "sumber": "Umum",
+    "tindakan": [
+      "Pastikan keamanan lokasi dengan prinsip Aman Diri, Aman Lingkungan, Aman Korban.[cite: 1]",
+      "Cek respon korban dengan menepuk bahu dan memanggil dengan keras. Jika tidak ada respon, hubungi layanan darurat 119.[cite: 1]",
+      "Lakukan kompresi dada dengan meletakkan pangkal telapak tangan di tengah dada, tumpuk tangan satunya di atas.[cite: 1]",
+      "Tekan kuat dan cepat dengan kedalaman 5-6 cm dan kecepatan 100-120 kali per menit.[cite: 1]",
+      "Jika terlatih, berikan 2 kali napas buatan setiap 30 kompresi (Rasio 30:2). Jika tidak, terus lakukan kompresi dada (Hands-only CPR) hingga bantuan datang.[cite: 1]"
+    ],
+    "larangan": [
+      "Jangan hentikan kompresi dada lebih dari 10 detik kecuali untuk memberikan napas buatan atau menggunakan perangkat AED.[cite: 1]"
+    ],
+    "perlengkapan": [
+      "Perangkat AED (Automated External Defibrillator) jika tersedia[cite: 1]"
+    ]
+  },
+  {
+    "kategori": "Bantuan Hidup Dasar (BHD)",
+    "judul": "Tersedak (Choking / Heimlich Maneuver)",
+    "sumber": "Umum",
+    "tindakan": [
+      "Tanyakan 'Apakah Anda tersedak?' Jika korban mengangguk dan tidak bisa batuk, segera bertindak.[cite: 1]",
+      "Berdiri di belakang korban, peluk pinggangnya, dan letakkan sisi jempol kepalan tangan di perut sedikit di atas pusar.[cite: 1]",
+      "Berikan hentakan ke arah dalam dan atas secara kuat dan cepat (seperti gerakan menyekop).[cite: 1]",
+      "Ulangi dorongan perut (Heimlich Maneuver) sampai benda yang menyumbat keluar atau korban kehilangan kesadaran.[cite: 1]"
+    ],
+    "larangan": [
+      "Jika korban kehilangan kesadaran, dilarang melanjutkan Heimlich Maneuver; segera baringkan di lantai dan mulai resusitasi (CPR).[cite: 1]"
+    ],
+    "perlengkapan": []
+  },
+  {
+    "kategori": "Gigitan dan Keracunan",
+    "judul": "Gigitan Ular Berbisa",
+    "sumber": "Umum",
+    "tindakan": [
+      "Bawa korban menjauh dari area keberadaan ular dan pastikan area aman.[cite: 1]",
+      "Tenangkan korban dan minta untuk tidak banyak bergerak agar pergerakan otot tidak mempercepat penyebaran racun.[cite: 1]",
+      "Posisikan area yang digigit lebih rendah dari level jantung.[cite: 1]",
+      "Imobilisasi area yang digigit dengan memasang bidai agar lengan atau kaki tidak banyak bergerak.[cite: 1]",
+      "Segera evakuasi ke fasilitas kesehatan terdekat untuk mendapatkan Serum Anti Bisa Ular (SABU).[cite: 1]"
+    ],
+    "larangan": [
+      "Dilarang menghisap racun dengan mulut atau menyayat luka gigitan.[cite: 1]",
+      "Dilarang mengikat dengan torniket mati kecuali oleh tenaga medis profesional.[cite: 1]",
+      "Dilarang memberikan kompres es pada area gigitan ular.[cite: 1]"
+    ],
+    "perlengkapan": [
+      "Bidai / Spalk penyangga[cite: 1]",
+      "Kain pengikat imobilisasi[cite: 1]"
+    ]
+  },
+  {
+    "kategori": "Gigitan dan Keracunan",
+    "judul": "Keracunan Makanan atau Tertelan Bahan Berbahaya",
+    "sumber": "Umum",
+    "tindakan": [
+      "Cari tahu apa yang tertelan, seberapa banyak, dan kapan kejadiannya.[cite: 1]",
+      "Simpan kemasan produk atau sisa muntahan jika ada untuk ditunjukkan ke tenaga medis.[cite: 1]",
+      "Jika korban tidak sadar, letakkan dalam posisi miring (recovery position) untuk mencegah tersedak muntahan.[cite: 1]",
+      "Segera hubungi sentra informasi keracunan atau layanan gawat darurat (119).[cite: 1]"
+    ],
+    "larangan": [
+      "Dilarang memaksa korban untuk muntah kecuali diinstruksikan oleh medis karena bahan kimia korosif dapat merusak kerongkongan dua kali.[cite: 1]",
+      "Dilarang memberikan minum susu atau air putih tanpa adanya instruksi medis yang jelas.[cite: 1]"
+    ],
+    "perlengkapan": [
+      "Sisa sampel bahan toksik atau kemasan produk[cite: 1]"
+    ]
+  },
+  {
+    "kategori": "Basic Survival (Bertahan Hidup)",
+    "judul": "Tersesat dan Navigasi Darurat",
+    "sumber": "Umum",
+    "tindakan": [
+      "Terapkan prinsip STOP: Stop (berhenti bergerak dan tenangkan diri), Think (ingat posisi terakhir), Observe (amati sekeliling), Plan (buat rencana).[cite: 1]",
+      "Jika malam menjelang, prioritaskan membuat tempat berlindung (bivak) dan menyalakan api.[cite: 1]",
+      "Untuk navigasi siang hari, tancapkan tongkat lurus di tanah dan amati pergeseran ujung bayangannya selama 30 menit untuk menentukan jalur Barat-Timur.[cite: 1]",
+      "Untuk navigasi malam di bumi belahan selatan, gunakan Rasi Bintang Pari dengan menarik garis lurus ke bawah untuk menunjuk arah Selatan.[cite: 1]"
+    ],
+    "larangan": [
+      "Dilarang berjalan menyusuri hutan di malam hari tanpa arah yang jelas.[cite: 1]",
+      "Dilarang panik karena kepanikan dapat membunuh lebih cepat dari kelaparan.[cite: 1]",
+      "Dilarang mengandalkan pertumbuhan lumut di pohon untuk navigasi di hutan hujan tropis karena kelembaban merata tidak akurat menunjukkan arah.[cite: 1]"
+    ],
+    "perlengkapan": [
+      "Tongkat kayu lurus (untuk navigasi bayangan)[cite: 1]",
+      "Peralatan pembuat api (korek/flint)[cite: 1]",
+      "Peralatan pembuat bivak darurat[cite: 1]"
     ]
   },
   {
@@ -97,20 +197,20 @@
     "judul": "Gempa Bumi (Kedaruratan Tektonik)",
     "sumber": "BNPB",
     "tindakan": [
-      "Praktikkan manuver refleks pertahanan Drop, Cover, and Hold on (menjatuhkan diri ke lantai, merangkak berlindung di kolong struktur keras seperti meja kayu, dan berpegangan). [cite: 179, 181, 275]",
-      "Lindungi persendian kepala, leher belakang, dan mata menggunakan bantal empuk, tas punggung, buku tebal, atau lipatan lengan (helm improvisasi). [cite: 183, 277, 278]",
-      "Jika sedang menggunakan dapur, sesegera mungkin gapai kenop aliran gas dan matikan kompor untuk mencegah ledakan sekunder. [cite: 184, 279]"
+      "Praktikkan manuver refleks pertahanan Drop, Cover, and Hold on (menjatuhkan diri ke lantai, merangkak berlindung di kolong struktur keras seperti meja kayu, dan berpegangan).",
+      "Lindungi persendian kepala, leher belakang, dan mata menggunakan bantal empuk, tas punggung, buku tebal, atau lipatan lengan (helm improvisasi).",
+      "Jika sedang menggunakan dapur, sesegera mungkin gapai kenop aliran gas dan matikan kompor untuk mencegah ledakan sekunder."
     ],
     "larangan": [
-      "Dilarang berdiri di bawah area pembatas material rapuh seperti partisi jendela kaca, di dekat lemari pajangan, papan reklame neon, atau di bawah pepohonan/tiang listrik di luar ruangan. [cite: 188, 278, 279]",
-      "Dilarang memicu kepanikan emosional massal dengan berlarian berhamburan serentak (stampede) menuju jalan keluar sempit saat guncangan berlangsung. [cite: 190, 275, 276, 280]",
-      "Dilarang melakukan pergerakan keluar gedung komersial/bioskop sebelum guncangan seismik gempa dipastikan benar-benar berhenti mutlak. [cite: 191, 192]"
+      "Dilarang berdiri di bawah area pembatas material rapuh seperti partisi jendela kaca, di dekat lemari pajangan, papan reklame neon, atau di bawah pepohonan/tiang listrik di luar ruangan.",
+      "Dilarang memicu kepanikan emosional massal dengan berlarian berhamburan serentak (stampede) menuju jalan keluar sempit saat guncangan berlangsung.",
+      "Dilarang melakukan pergerakan keluar gedung komersial/bioskop sebelum guncangan seismik gempa dipastikan benar-benar berhenti mutlak."
     ],
     "perlengkapan": [
-      "Meja furnitur kayu keras padat kokoh [cite: 181, 276]",
-      "Bantal / tas punggung (untuk proteksi kepala/helm improvisasi) [cite: 183, 277]",
-      "Peluit berdesibel tinggi (penanda K-9 jika tertimbun puing ruangan sempit) [cite: 167, 169, 278]",
-      "Tas Siaga Bencana (TSB) [cite: 154]"
+      "Meja furnitur kayu keras padat kokoh",
+      "Bantal / tas punggung (untuk proteksi kepala/helm improvisasi)",
+      "Peluit berdesibel tinggi (penanda K-9 jika tertimbun puing ruangan sempit)",
+      "Tas Siaga Bencana (TSB)"
     ]
   },
   {
@@ -118,18 +218,18 @@
     "judul": "Erupsi Gunung Api (Vulkanik)",
     "sumber": "BNPB",
     "tindakan": [
-      "Pantau secara ketat informasi preskriptif evakuasi dari Pusat Vulkanologi dan Mitigasi Bencana Geologi (PVMBG). [cite: 185]",
-      "Gunakan aplikasi MAGMA Indonesia di sistem operasi gawai untuk memantau aktivitas vulkanik. [cite: 185]",
-      "Gunakan masker penyaring N-95 atau yang relevan untuk menahan debu. [cite: 185]",
-      "Gunakan instrumen kacamata pelindung kedap udara (goggles) khusus pelindung mata. [cite: 185]"
+      "Pantau secara ketat informasi preskriptif evakuasi dari Pusat Vulkanologi dan Mitigasi Bencana Geologi (PVMBG).",
+      "Gunakan aplikasi MAGMA Indonesia di sistem operasi gawai untuk memantau aktivitas vulkanik.",
+      "Gunakan masker penyaring N-95 atau yang relevan untuk menahan debu.",
+      "Gunakan instrumen kacamata pelindung kedap udara (goggles) khusus pelindung mata."
     ],
     "larangan": [
-      "Dilarang membiarkan kornea mata dan epitel saluran pernapasan terpapar partikulat serpihan kaca silika tajam dari debu vulkanik kasar. [cite: 185]"
+      "Dilarang membiarkan kornea mata dan epitel saluran pernapasan terpapar partikulat serpihan kaca silika tajam dari debu vulkanik kasar."
     ],
     "perlengkapan": [
-      "Aplikasi MAGMA Indonesia [cite: 185]",
-      "Masker penyaring N-95 [cite: 185]",
-      "Kacamata pelindung (goggles) kedap udara [cite: 185]"
+      "Aplikasi MAGMA Indonesia",
+      "Masker penyaring N-95",
+      "Kacamata pelindung (goggles) kedap udara"
     ]
   },
   {
@@ -137,23 +237,23 @@
     "judul": "Banjir Bandang & Genangan Air Ekstrem",
     "sumber": "BNPB",
     "tindakan": [
-      "Pelajari rute jalur lintasan evakuasi lingkungan berbasis kelurahan sejak pra-bencana. [cite: 198]",
-      "Segera amankan Tas Siaga Bencana (TSB) dan evakuasi ke topografi daerah elevasi yang jauh lebih tinggi. [cite: 154, 195, 281]",
-      "Pantau observasi informasi resmi cuaca hidrometeorologis dan peringatan dini dari BPBD/BNPB lokal. [cite: 198, 283, 285]",
-      "Pemutusan instalasi aliran arus listrik dari gardu meteran sekring utama kelistrikan (MCB) properti harus segera dilakukan secepat kilat untuk mencegah sengatan sirkuit tersetrum massal. [cite: 196, 197, 285, 324]"
+      "Pelajari rute jalur lintasan evakuasi lingkungan berbasis kelurahan sejak pra-bencana.",
+      "Segera amankan Tas Siaga Bencana (TSB) dan evakuasi ke topografi daerah elevasi yang jauh lebih tinggi.",
+      "Pantau observasi informasi resmi cuaca hidrometeorologis dan peringatan dini dari BPBD/BNPB lokal.",
+      "Pemutusan instalasi aliran arus listrik dari gardu meteran sekring utama kelistrikan (MCB) properti harus segera dilakukan secepat kilat untuk mencegah sengatan sirkuit tersetrum massal."
     ],
     "larangan": [
-      "JANGAN PANIK! Sindrom histeria atau kepanikan dilarang keras karena dapat mematikan korteks prefrontal rasional di otak, sehingga pasien gagal melakukan langkah esensial logis pengamanan. [cite: 199, 201, 202, 282]",
-      "Dilarang lalai, menyepelekan, atau mengabaikan tindakan mematikan instalasi arus listrik di rumah yang tergenang air keruh konduktif. [cite: 197, 285, 286, 325]"
+      "JANGAN PANIK! Sindrom histeria atau kepanikan dilarang keras karena dapat mematikan korteks prefrontal rasional di otak, sehingga pasien gagal melakukan langkah esensial logis pengamanan.",
+      "Dilarang lalai, menyepelekan, atau mengabaikan tindakan mematikan instalasi arus listrik di rumah yang tergenang air keruh konduktif."
     ],
     "perlengkapan": [
-      "Tas Siaga Bencana (TSB) otonom [cite: 154, 281, 327]",
-      "Dokumen legal penting (sertifikat, KK, KTP) diisolasi berlapis plastik kedap air ganda [cite: 157, 159, 285]",
-      "Lampu senter penerangan dan suplai baterai cadangan [cite: 166, 283]",
-      "Jas hujan plastik mantel ponco tebal dan baju lengan tebal panjang pelindung hipotermia basah [cite: 163, 286, 329]",
-      "Bank daya listrik (power bank) [cite: 165, 286]",
-      "Uang kas / Rupiah tunai dalam pecahan kecil [cite: 165, 284]",
-      "Cadangan ransum kalori tinggi matang siap saji (tanpa dimasak) dan air minum botol segel kemasan [cite: 161, 282]"
+      "Tas Siaga Bencana (TSB) otonom",
+      "Dokumen legal penting (sertifikat, KK, KTP) diisolasi berlapis plastik kedap air ganda",
+      "Lampu senter penerangan dan suplai baterai cadangan",
+      "Jas hujan plastik mantel ponco tebal dan baju lengan tebal panjang pelindung hipotermia basah",
+      "Bank daya listrik (power bank)",
+      "Uang kas / Rupiah tunai dalam pecahan kecil",
+      "Cadangan ransum kalori tinggi matang siap saji (tanpa dimasak) dan air minum botol segel kemasan"
     ]
   },
   {
@@ -161,25 +261,25 @@
     "judul": "Kebakaran Struktur Interior Gedung Tertutup",
     "sumber": "BNPB",
     "tindakan": [
-      "Pertahankan ketenangan sikap. Menjadi penemu (first observer) wajib menyalakan dan membunyikan alat fasilitas tombol aktivasi tanda bahaya (bel alarm sirene evakuasi). [cite: 208, 209, 288, 289]",
-      "Evakuasi segera bergerak melangkah cepat mengikuti rambu piktogram penerangan arah berwarna hijau (glow in the dark sign) ke tangga darurat. [cite: 211, 289]",
-      "Bila terhalang tabir kumpulan gas asap monoksida pekat, ubah pergerakan menjadi merayap/merangkak menempel rendah di dekat lantai karena sisa oksigen bersih selalu berada di elevasi radius setinggi lutut. [cite: 211, 213, 291, 292]",
-      "Sambil merayap, atur pernapasan ritmis dengan menghembus pendek-pendek untuk efisiensi dan meminimalkan volume partikulat racun asap kimia yang dihirup. [cite: 214, 215, 293]",
-      "Tiba di luar, segera berkumpul terfokus di Muster Point (Titik Kumpul Lapangan) untuk absen tabulasi kalkulasi (head count) karyawan hilang dan melapor ke otoritas. [cite: 216, 294]"
+      "Pertahankan ketenangan sikap. Menjadi penemu (first observer) wajib menyalakan dan membunyikan alat fasilitas tombol aktivasi tanda bahaya (bel alarm sirene evakuasi).",
+      "Evakuasi segera bergerak melangkah cepat mengikuti rambu piktogram penerangan arah berwarna hijau (glow in the dark sign) ke tangga darurat.",
+      "Bila terhalang tabir kumpulan gas asap monoksida pekat, ubah pergerakan menjadi merayap/merangkak menempel rendah di dekat lantai karena sisa oksigen bersih selalu berada di elevasi radius setinggi lutut.",
+      "Sambil merayap, atur pernapasan ritmis dengan menghembus pendek-pendek untuk efisiensi dan meminimalkan volume partikulat racun asap kimia yang dihirup.",
+      "Tiba di luar, segera berkumpul terfokus di Muster Point (Titik Kumpul Lapangan) untuk absen tabulasi kalkulasi (head count) karyawan hilang dan melapor ke otoritas."
     ],
     "larangan": [
-      "Dilarang mempraktekkan mobilitas cepat tidak terkendali (berlari tergesa-gesa) di tangga lorong evakuasi sempit karena memicu tumpukan korban jatuh asfiksia beruntun. [cite: 222, 289]",
-      "Sangat dilarang keras berlindung ke dalam atau menaiki sistem Elevator/Lift karena lorong terowongan lift bertindak seperti sistem cerobong (chimney effect) yang menarik menyedot awan partikel panas langsung ke kabin atas. [cite: 225, 226, 290]",
-      "Dilarang keras berbalik arah rotasi melawan aliran kerumunan gelombang massa pelarian (counter-flow) karena akan menyebabkan himpitan tekanan dinding kerumunan fatal. [cite: 231, 232, 293]",
-      "Dilarang mengangkut beban material perbekalan dengan dimensi yang berukuran lebih lebar berat dari tas jinjing punggung biasa. [cite: 229, 230, 295, 296]",
-      "Bagi wanita, dilarang mutlak memakai sepatu hak tinggi sol lancip (high heels / stiletto) saat di tangga karena merusak gravitasi engsel pergelangan yang rentan tersandung mencederai komuter antrian belakang. [cite: 234, 235, 297]",
-      "Bagi wanita, dilarang pemakaian tekstil celana stoking tipis berbahan polimer nilon sintetis elastane komersial. Pada suhu kebakaran, bahan polimer tersebut akan meleleh cair meresap dan menempel menyatu melebur ke dalam dermis pori betis menyebabkan kerusakan luka bakar keliling permanen ekstrem. [cite: 236, 237, 238, 298, 317, 319]"
+      "Dilarang mempraktekkan mobilitas cepat tidak terkendali (berlari tergesa-gesa) di tangga lorong evakuasi sempit karena memicu tumpukan korban jatuh asfiksia beruntun.",
+      "Sangat dilarang keras berlindung ke dalam atau menaiki sistem Elevator/Lift karena lorong terowongan lift bertindak seperti sistem cerobong (chimney effect) yang menarik menyedot awan partikel panas langsung ke kabin atas.",
+      "Dilarang keras berbalik arah rotasi melawan aliran kerumunan gelombang massa pelarian (counter-flow) karena akan menyebabkan himpitan tekanan dinding kerumunan fatal.",
+      "Dilarang mengangkut beban material perbekalan dengan dimensi yang berukuran lebih lebar berat dari tas jinjing punggung biasa.",
+      "Bagi wanita, dilarang mutlak memakai sepatu hak tinggi sol lancip (high heels / stiletto) saat di tangga karena merusak gravitasi engsel pergelangan yang rentan tersandung mencederai komuter antrian belakang.",
+      "Bagi wanita, dilarang pemakaian tekstil celana stoking tipis berbahan polimer nilon sintetis elastane komersial. Pada suhu kebakaran, bahan polimer tersebut akan meleleh cair meresap dan menempel menyatu melebur ke dalam dermis pori betis menyebabkan kerusakan luka bakar keliling permanen ekstrem."
     ],
     "perlengkapan": [
-      "Tombol saklar aktivasi alarm peringatan sirene [cite: 209, 289]",
-      "Rambu arah lampu penunjuk evakuasi (glow in the dark) menyala [cite: 211, 289, 290]",
-      "Infrastruktur jalur lorong tangga pintu keluar darurat [cite: 211, 288, 289]",
-      "Sarana alat instrumen telekomunikasi genggam darurat (laporan ke Damkar) [cite: 216, 290, 292]"
+      "Tombol saklar aktivasi alarm peringatan sirene",
+      "Rambu arah lampu penunjuk evakuasi (glow in the dark) menyala",
+      "Infrastruktur jalur lorong tangga pintu keluar darurat",
+      "Sarana alat instrumen telekomunikasi genggam darurat (laporan ke Damkar)"
     ]
   }
 ]
