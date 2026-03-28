@@ -1,10 +1,12 @@
 package com.sanomush.tari.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.sanomush.tari.DetailBookActivity
 import com.sanomush.tari.R
 import com.sanomush.tari.data.EmergencyData
 
@@ -31,6 +33,22 @@ class BookAdapter(private val listData: List<EmergencyData>) :
 
         if (data.tindakan.isNotEmpty()) {
             holder.tvPreview.text = data.tindakan[0]
+        }
+
+        // --- INI LOGIKA KLIK PINDAH HALAMAN (INTENT) ---
+        holder.itemView.setOnClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(context, DetailBookActivity::class.java).apply {
+                putExtra("EXTRA_JUDUL", data.judul)
+                putExtra("EXTRA_KATEGORI", data.kategori)
+                putExtra("EXTRA_SUMBER", data.sumber)
+
+                // Kirim data list JSON ke halaman detail
+                putStringArrayListExtra("EXTRA_TINDAKAN", ArrayList(data.tindakan))
+                putStringArrayListExtra("EXTRA_LARANGAN", ArrayList(data.larangan))
+                putStringArrayListExtra("EXTRA_PERLENGKAPAN", ArrayList(data.perlengkapan))
+            }
+            context.startActivity(intent)
         }
     }
 
