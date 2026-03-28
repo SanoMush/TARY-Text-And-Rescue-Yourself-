@@ -141,8 +141,8 @@ class ChatFragment : Fragment() {
             // Padding bawah otomatis mengikuti tinggi keyboard saat muncul
             val bottomPadding = if (imeVisible) imeHeight else systemBars.bottom
 
-            // Terapkan padding ke root view fragment
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, bottomPadding)
+            // Terapkan padding ke root view fragment (Atas, Kiri, Kanan di-nol-kan biar header mentok atas)
+            v.setPadding(0, 0, 0, bottomPadding)
 
             // Auto-scroll RecyclerView ke pesan terbawah saat keyboard naik
             if (imeVisible && chatAdapter.itemCount > 0) {
